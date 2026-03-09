@@ -4,7 +4,7 @@ This algorithm provides the procedure for transforming irregular spatial geometr
 
 ## 1. Mathematical Framework
 * **Resolution Mapping Function $T(A_i)$**: Assigns an H3 resolution $r_i \in \{0, \dots, 15\}$ based on the feature's area $A_i$ in square meters.
-* **Geometry Buffering ($d_r$)**: To ensure complete coverage of irregular boundaries, a buffer is applied: $d_r = 0.5 \times \text{h3.edge\_length}(r, \text{unit='m'})$.
+* **Geometry Buffering ($d_r$)**: To ensure complete coverage of irregular boundaries, a buffer is applied:  d_r = 0.5 * h3.edge_length(r, unit='m').
 * **Fallback Mechanism**: If the initial resolution yields no cells, the system increments resolution ($r_i + k$) for up to three attempts ($k=1,2,3$).
 
 ## 2. Pseudocode Logic
