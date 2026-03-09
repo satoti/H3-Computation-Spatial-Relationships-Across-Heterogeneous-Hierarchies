@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this methodology or the mapping thresholds, please cite it as follows."
+authors:
+- family-names: "Satoti"
+  given-names: "Abdurauf"
+  affiliation: "Cardiff University"
+  email: "SatotiAm@cardiff.ac.uk"
+- family-names: "Abdelmoty"
+  given-names: "Alia I."
+  affiliation: "Cardiff University"
+title: "H3-Based Computation of Qualitative Spatial Relationships Across Heterogeneous Geographic Hierarchies"
+version: 1.0.0
+date-released: 2026-03-09
+url: "https://github.com/satoti/H3-Computation-Spatial-Relationships-Across-Heterogeneous-Hierarchies"
