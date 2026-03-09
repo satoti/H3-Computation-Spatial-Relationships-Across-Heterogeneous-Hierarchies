@@ -1,4 +1,4 @@
-# Algorithm 2: Spatial Relationship Classification
+# Algorithm 2: Spatial Relationship Computation
 
 This documents the logic for identifying 17 qualitative spatial relationships (Topological, Proximity, and Hierarchical) across heterogeneous hierarchies.
 
