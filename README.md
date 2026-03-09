@@ -33,4 +33,4 @@ If you use this framework or the mapping thresholds in your research, please cit
 > Satoti, A., & Abdelmoty, A. I. (2026). H3-Based Computation of Qualitative Spatial Relationships Across Heterogeneous Geographic Hierarchies. *Transactions in GIS* (In Submission).
 
 ## ✉️ Contact
-For questions regarding the methodology or data implementation, please contact **Abdurauf Satoti** at [Your Email Address].
+For questions regarding the methodology or data implementation, please contact **Abdurauf Satoti** at [SatotiAm@cardiff.ac.uk].
