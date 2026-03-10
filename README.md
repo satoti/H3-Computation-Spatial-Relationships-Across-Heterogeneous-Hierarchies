@@ -16,7 +16,7 @@ Traditional Geographic Information Systems (GIS) often classify spatially separa
 
 ## 📂 Repository Contents
 * **[Algorithm 1: H3 Cell Assignment](./algorithms/Algorithm_1_Cell_Assignment.md)**: Details the adaptive resolution mapping function $T(A_i)$ and the geometry buffering logic.
-* **[Algorithm 2: Relationship Classification](./algorithms/Algorithm_2_Relationship_Classification.md)**: Documents the decision-tree logic for computing 17 spatial relationships via H3 set-theoretic operations.
+* **[Algorithm 2: Relationship Classification](./algorithms/Algorithm_2_Relationship_Computation.md)**: Documents the decision-tree logic for computing 17 spatial relationships via H3 set-theoretic operations.
 * **[Reference Metrics: Mapping Thresholds](./algorithms/Appendix_A_Mapping.md)**: Provides the complete area thresholds ($m^2$) and average cell areas for H3 resolutions 0–15.
 
 ---
@@ -34,7 +34,7 @@ If you use this framework or the mapping thresholds in your research, please cit
 ---
 
 ## 🖼️ Visual Examples
-Representative examples of the spatial relationships identified by the framework are provided in the [Algorithm 2 documentation](./algorithms/Algorithm_2_Relationship_Classification.md#4-illustrative-examples-from-the-welsh-case-study). These examples illustrate topological, proximity, and hierarchical classifications derived from the Welsh case study.
+Representative examples of the spatial relationships identified by the framework are provided in the [Algorithm 2 documentation](./algorithms/Algorithm_2_Relationship_Computation.md#4-illustrative-examples-from-the-welsh-case-study). These examples illustrate topological, proximity, and hierarchical classifications derived from the Welsh case study.
 
 ## ✉️ Contact
 For questions regarding the methodology or data implementation, please contact **Abdurauf Satoti** at [SatotiAm@cardiff.ac.uk].
