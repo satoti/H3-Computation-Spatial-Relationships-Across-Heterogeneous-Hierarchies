@@ -31,6 +31,10 @@ Traditional Geographic Information Systems (GIS) often classify spatially separa
 ## 🎓 Citation
 If you use this framework or the mapping thresholds in your research, please cite:
 > Satoti, A., & Abdelmoty, A. I. (2026). H3-Based Computation of Qualitative Spatial Relationships Across Heterogeneous Geographic Hierarchies. *Transactions in GIS* (In Submission).
+---
+
+## 🖼️ Visual Examples
+Representative examples of the spatial relationships identified by the framework are provided in the [Algorithm 2 documentation](./algorithms/Algorithm_2_Relationship_Classification.md#4-illustrative-examples-from-the-welsh-case-study). These examples illustrate topological, proximity, and hierarchical classifications derived from the Welsh case study.
 
 ## ✉️ Contact
 For questions regarding the methodology or data implementation, please contact **Abdurauf Satoti** at [SatotiAm@cardiff.ac.uk].
