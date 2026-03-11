@@ -13,6 +13,10 @@ The framework categorizes interactions into three primary domains:
 ---
 
 ## 2. Classification Logic (Pseudocode)
+The overlap ratio ($\rho$) used in the following steps is defined as:
+$$\rho = \frac{|A \cap B|}{\min(|A|, |B|)}$$
+where $A$ and $B$ represent the H3 cell sets of the two spatial units, and $|A|$ denotes the number of cells in set $A$.
+
 1. **Resolution Check**: Compare H3 resolutions ($r_i, r_j$) of the two feature representations.
 2. **Same Resolution Path** ($r_i = r_j$):
     * Perform **Set Intersection** on H3 cell sets to find shared cells ($S$).
@@ -25,20 +29,24 @@ The framework categorizes interactions into three primary domains:
     * Map the finer-resolution cells to the coarser resolution ($r_c$) using `h3SetToParent`.
     * Validate containment via **geometric union check** to distinguish between *Complete* and *Partial*.
     * Check alignment with the coarser feature's **border cells** to identify *Hierarchical Touch*.
-
 ---
 
 ## 3. Results
-This set-theoretic approach, replacing traditional vector-based DE-9IM intersection tests, achieved a **3.6x computational speedup** while identifying 11 relationship types not natively supported by traditional topology.
+This set-theoretic approach, replacing traditional vector-based intersection tests used in the Dimensionally Extended Nine-Intersection Model (DE-9IM), achieved a **3.6x computational speedup** while identifying 11 relationship types not natively supported by traditional topology.
 
+---
 
 ## 4. Illustrative Examples from the Welsh Case Study
-
-The following examples demonstrate the classification logic applied to real geographic data from the Welsh administrative, electoral, and postal hierarchies.
 
 ### Topological Relationship: Identical
 Demonstrates spatial equivalence across different hierarchies (administrative vs electoral) at H3 Resolution 5.
 ![Identical Relationship](../images/Wales_in_Adminstrative_in_electoral2.png)
+
+---
+
+### Proximity Relationship: Neighbour (d = 1)
+Illustrates the "Neighbour" relationship where features share no common H3 cells but are directly adjacent in the grid (minimum grid distance $d=1$).
+![Neighbour Relationship](../images/Whitchurch_Cf52_Nieghbouring2.png)
 
 ---
 
@@ -54,6 +62,6 @@ Shows how finer-resolution H3 cells representing the CF23 postal sector (resolut
 
 ---
 
-### Edge Case: Direct Parent (Partial Containment)
-Due to the discrete nature of the H3 grid, a small number of child cells may extend slightly beyond the exact geometric boundary of the parent feature. This reflects grid approximation rather than a classification error.
-![Partial Containment](../images/Thornhill_Cells_H33_white2.png)
+### Edge Case: Partial Containment (Grid Approximation)
+Illustrates how the framework handles boundary misalignments between H3 cells and irregular vector geometries (e.g., Butetown postal sector). This reflects grid approximation rather than a classification error.
+![Partial Containment](../images/Butetown_cf105_extedndingbyond_bouundaries.png)
