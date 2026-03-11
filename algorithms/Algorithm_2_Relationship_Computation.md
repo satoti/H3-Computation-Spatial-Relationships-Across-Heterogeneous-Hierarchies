@@ -83,3 +83,4 @@ Containment** in the discretised spatial model.
 **Example: Lisvane and Thornhill ED / Thornhill Community**
 As documented in the research appendix (Section F.10), a **Partial Containment** relationship is identified when the child H3 cell set is not fully contained within the parent's hexagonal representation. This example illustrates the limit of grid approximation where the geometric discrepancy is significant enough to be preserved in the qualitative output.
 ![Partial Containment](../images/Thornhill_Cells_H33_white2.png)
+![H3 Cells excceds parent cells](../images/Lisavane_and_thronHill3_last_withlable.png)
