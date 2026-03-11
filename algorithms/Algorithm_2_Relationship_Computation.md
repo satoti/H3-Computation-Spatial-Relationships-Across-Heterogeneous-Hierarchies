@@ -61,7 +61,25 @@ Shows how finer-resolution H3 cells representing the CF23 postal sector (resolut
 ![Direct Parent Containment](../images/Cardiff_Cf23_last_direct_containment_parent.png)
 
 ---
+### Hierarchical Relationship: Complete Containment (Cross-Hierarchy Alignment)
 
-### Edge Case: Partial Containment (Grid Approximation)
-Illustrates how the framework handles boundary misalignments between H3 cells and irregular vector geometries (e.g., Butetown postal sector). This reflects grid approximation rather than a classification error.
-![Partial Containment](../images/Butetown_cf105_extedndingbyond_bouundaries.png)
+This example demonstrates how the H3-based representation can reconcile
+minor geometric inconsistencies between heterogeneous spatial datasets.
+
+In the original vector geometries, the CF105 postal sector extends slightly
+beyond the Butetown community boundary along the southern coastline.
+However, after mapping both features to the H3 grid, all CF105 cells fall
+within the H3 representation of Butetown.
+
+As a result, the framework classifies the relationship as **Complete
+Containment** in the discretised spatial model.
+
+![Vector Geometry Context](../images/Butetown_cf105_extedndingbyond_bouundaries.png)
+
+![H3 Cell Representation](../images/Cf105_Butetown_12Map.png)
+
+
+### Hierarchical Relationship: Direct Parent (Partial Containment)
+**Example: Lisvane and Thornhill ED / Thornhill Community**
+As documented in the research appendix (Section F.10), a **Partial Containment** relationship is identified when the child H3 cell set is not fully contained within the parent's hexagonal representation. This example illustrates the limit of grid approximation where the geometric discrepancy is significant enough to be preserved in the qualitative output.
+![Partial Containment](../images/Thornhill_Cells_H33_white2.png)
