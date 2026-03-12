@@ -6,25 +6,25 @@ This repository contains the methodology, algorithms, and reference metrics for 
 ---
 
 ## 🗺️ Overview
-[cite_start]Traditional Geographic Information Systems (GIS) often classify spatially separated features as simply `DISJOINT`[cite: 10]. This framework leverages Uber's **H3 Discrete Global Grid System (DGGS)** to bridge heterogeneous hierarchies (Administrative, Electoral, and Postal) by:
+Traditional Geographic Information Systems (GIS) often classify spatially separated features as simply `DISJOINT`. This framework leverages Uber's **H3 Discrete Global Grid System (DGGS)** to bridge heterogeneous hierarchies (Administrative, Electoral, and Postal) by:
 
-1.  [cite_start]**Adaptive Transformation**: Converting irregular spatial units into standardized hexagonal cell sets based on feature area using a dynamic resolution mapping function $T(A_i)$[cite: 11, 14, 16].
-2.  [cite_start]**Qualitative Reasoning**: Identifying **17 distinct relationship types** across Topological, Proximity, and Hierarchical domains[cite: 7, 27].
-3.  [cite_start]**Methodological Transparency**: Full technical specifications, mathematical proofs, and pseudocode are provided in the **[Technical Report (2026)](./H3_Relationships_computation_papers.pdf)**[cite: 6].
+1. **Adaptive Transformation**: Converting irregular spatial units into standardized hexagonal cell sets based on feature area using a dynamic resolution mapping function $T(A_i)$.
+2. **Qualitative Reasoning**: Identifying **17 distinct relationship types** across Topological, Proximity, and Hierarchical domains.
+3. **Methodological Transparency**: Full technical specifications, mathematical proofs, and pseudocode are provided in the **[Technical Report (2026)](./H3_Relationships_computation_papers.pdf)**.
 
 ---
 
 ## 📂 Repository Contents
-* [cite_start]**[Algorithm 1: H3 Cell Assignment](./algorithms/Algorithm_1_Cell_Assignment.md)**: Details the adaptive resolution mapping function $T(A_i)$ and the geometry buffering logic[cite: 12, 17].
-* [cite_start]**[Algorithm 2: Relationship Classification](./algorithms/Algorithm_2_Relationship_Computation.md)**: Documents the decision-tree logic for computing 17 spatial relationships via H3 set-theoretic operations[cite: 26, 32].
-* [cite_start]**[Reference Metrics: Mapping Thresholds](./algorithms/Appendix_A_Mapping.md)**: Provides the complete area thresholds ($m^2$) for H3 resolutions 0–15[cite: 21, 24].
+* **[Algorithm 1: H3 Cell Assignment](./algorithms/Algorithm_1_Cell_Assignment.md)**: Details the adaptive resolution mapping function $T(A_i)$ and the geometry buffering logic ($d_r = 0.5 \times$ edge length).
+* **[Algorithm 2: Relationship Classification](./algorithms/Algorithm_2_Relationship_Computation.md)**: Documents the decision-tree logic for computing 17 spatial relationships via H3 set-theoretic operations.
+* **[Reference Metrics: Mapping Thresholds](./algorithms/Appendix_A_Mapping.md)**: Provides the complete area thresholds for H3 resolutions 0–15.
 
 ---
 
 ## 📈 Key Research Findings
-* [cite_start]**Performance**: Achieved a **3.6 speedup** over traditional vector-based DE-9IM operations (49 minutes vs. 177 minutes)[cite: 49].
-* [cite_start]**Fidelity**: Maintained a mean area approximation error of **8.30%**, suitable for qualitative reasoning[cite: 50].
-* [cite_start]**Functional Equivalence**: Successfully identified **433 Identical relationships** where traditional vector models found only 11, reconciling minor boundary discrepancies[cite: 51].
+* **Performance**: Achieved a **3.6x computational speedup** compared to standard vector-based DE-9IM operations (49 min vs 177 min).
+* **Fidelity**: Maintained a mean area approximation error of **8.30%**, confirming geometric fidelity suitable for qualitative reasoning.
+* **Functional Equivalence**: Successfully identified **433 Identical relationships** where traditional vector models found only 11, reconciling minor boundary discrepancies.
 
 ---
 
@@ -32,15 +32,12 @@ This repository contains the methodology, algorithms, and reference metrics for 
 If you use this framework or the mapping thresholds in your research, please cite:
 
 **Journal Paper (In Submission):**
-> Satoti, A., & Abdelmoty, A. I. (2026). H3-Based Computation of Qualitative Spatial Relationships Across Heterogeneous Geographic Hierarchies. [cite_start]*Transactions in GIS / ISPRS International Journal of Geo-Information*[cite: 55, 56].
+> Satoti, A., & Abdelmoty, A. I. (2026). H3-Based Computation of Qualitative Spatial Relationships Across Heterogeneous Geographic Hierarchies. *Transactions in GIS / ISPRS International Journal of Geo-Information*.
 
-**Methodological Foundation (Technical Report):**
-> Satoti, A. (2026). *Technical Report: H3-Based Spatial Representation and Relationship Modeling for Heterogeneous Hierarchies*. [cite_start]Cardiff University[cite: 1, 4].
+**Doctoral Thesis (Submitted for Examination):**
+> Satoti, A. (2026). *H3-Based Spatial Representation and Relationship Modeling for Geographic Features*. [Unpublished doctoral dissertation]. Cardiff University.
 
 ---
-
-## 🖼️ Visual Examples
-Representative examples of the spatial relationships identified by the framework are provided in the [Algorithm 2 documentation](./algorithms/Algorithm_2_Relationship_Computation.md). [cite_start]These examples illustrate topological, proximity, and hierarchical classifications derived from the Welsh case study[cite: 47].
 
 ## ✉️ Contact
 For questions regarding the methodology or data implementation, please contact **Abdurauf Satoti** at [SatotiAm@cardiff.ac.uk].
