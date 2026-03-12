@@ -22,3 +22,4 @@ This table provides the complete area thresholds ($m^2$) used by the mapping fun
 | 15 | $A_i < 100$ | 0.9 |
 
 *Note: Thresholds are designed to ensure cells are substantially smaller than the spatial units they represent.*
+*Source: Table 1, [Technical Report](../documentation/H3_Relationships_computation_papers.pdf)*.
