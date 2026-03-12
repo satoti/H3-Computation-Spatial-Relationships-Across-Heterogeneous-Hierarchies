@@ -14,7 +14,7 @@ This algorithm provides the procedure for transforming irregular spatial geometr
 2. **Compute Area** ($A_i$) and determine initial resolution $r$ via $T(A_i)$.
 3. **Buffer** the geometry by distance $d_r$ to ensure boundary capture.
 4. **Reproject** to WGS84 (EPSG:4326) for H3 compatibility.
-5. **Generate Cells** using `polyfill`.
+5. **Generate Cells** using `polyfill` function.
 6. **Fallback**: If empty, increment resolution and retry.
 7. **Deduplicate** and store against the `Spatial_unit_ID`.
 
