@@ -16,7 +16,7 @@ Traditional Geographic Information Systems (GIS) often classify spatially separa
 
 ## 📂 Repository Contents
 * **[Algorithm 1: H3 Cell Assignment](./algorithms/Algorithm_1_Cell_Assignment.md)**: Details the adaptive resolution mapping function $T(A_i)$ and the geometry buffering logic ($d_r = 0.5 \times$ edge length).
-* **[Algorithm 2: Relationship Classification](./algorithms/Algorithm_2_Relationship_Computation.md)**: Documents the decision-tree logic for computing 17 spatial relationships via H3 set-theoretic operations.
+* **[Algorithm 2: Relationship Computation](./algorithms/Algorithm_2_Relationship_Computation.md)**: Documents the decision-tree logic for computing 17 spatial relationships via H3 set-theoretic operations.
 * **[Reference Metrics: Mapping Thresholds](./algorithms/Appendix_A_Mapping.md)**: Provides the complete area thresholds for H3 resolutions 0–15.
 
 ---
