@@ -1,52 +1,46 @@
 # Algorithm 2: Spatial Relationship Computation
 
-This documents the logic for identifying 17 qualitative spatial relationships (Topological, Proximity, and Hierarchical) across heterogeneous hierarchies.
+This document details the classification logic used to identify 17 qualitative spatial relationships across heterogeneous geographic hierarchies.
 
----
-
-## 1. Relationship Taxonomy
-The framework categorizes interactions into three primary domains:
-* **Topological**: Identical, Complete Containment, Touch, Intersect, Overlap, Disjoint.
-* **Proximity**: Neighbour (d=1), Close (d=2), Near (d=3,4), Far (d≥5), Far Away (d=-1).
-* **Hierarchical**: Direct Parent (Complete/Partial), Ancestor (Complete/Partial), Hierarchical Touch, Hierarchical Overlap.
-
----
-
-## 2. Classification Logic (Pseudocode)
-The overlap ratio ($\rho$) used in the following steps is defined as:
+## 1. Metric Logic
+The degree of intersection between two H3 cell sets (A and B) is characterized by the **overlap ratio** ρ:
 $$\rho = \frac{|A \cap B|}{\min(|A|, |B|)}$$
-where $A$ and $B$ represent the H3 cell sets of the two spatial units, and $|A|$ denotes the number of cells in set $A$.
+where 0 ≤ ρ ≤ 1.
 
-1. **Resolution Check**: Compare H3 resolutions ($r_i, r_j$) of the two feature representations.
-2. **Same Resolution Path** ($r_i = r_j$):
-    * Perform **Set Intersection** on H3 cell sets to find shared cells ($S$).
-    * **Touch**: If overlap ratio $\rho \le 5\%$ and shared cells are on the boundary.
-    * **Intersect**: If overlap ratio $\rho \le 10\%$.
-    * **Overlap**: If overlap ratio $\rho > 10\%$.
-    * If sets are disjoint, compute minimum **H3 grid distance** ($d$).
-    * Assign Proximity label: **Neighbour** ($d=1$), **Close** ($d=2$), **Near** ($d=3,4$), or **Far** ($d \ge 5$).
-3. **Different Resolution Path** ($r_i \neq r_j$):
-    * Map the finer-resolution cells to the coarser resolution ($r_c$) using `h3SetToParent`.
-    * Validate containment via **geometric union check** to distinguish between *Complete* and *Partial*.
-    * Check alignment with the coarser feature's **border cells** to identify *Hierarchical Touch*.
----
 
-## 3. Results
-This set-theoretic approach, replacing traditional vector-based intersection tests used in the Dimensionally Extended Nine-Intersection Model (DE-9IM), achieved a **3.6x computational speedup** while identifying 11 relationship types not natively supported by traditional topology.
 
----
+## 2. The 17 Spatial Relationships
+The framework categorizes interactions into three primary domains:
 
-## 4. Illustrative Examples from the Welsh Case Study
+### Topological (Same Resolution)
+1. **Identical**: Cell sets are equal.
+2. **Complete Containment**: One set is a proper subset of another.
+3. **Touch**: Shared cells with ρ ≤ 0.05.
+4. **Intersect**: Shared cells with ρ ≤ 0.10.
+5. **Overlap**: Shared cells with ρ > 0.10.
+6. **Disjoint**: No shared cells or adjacency.
 
-### Topological Relationship: Identical
-Demonstrates spatial equivalence across different hierarchies (administrative vs electoral) at H3 Resolution 5.
-![Identical Relationship](../images/Wales_in_Adminstrative_in_electoral2.png)
+### Proximity (Same Resolution)
+Based on grid distance d:
+7. **Neighbour**: d = 1.
+8. **Close**: d = 2.
+9. **Near**: d ∈ {3, 4}.
+10. **Far**: d ≥ 5.
+11. **Far Away**: d = -1 (Undefined grid distance).
 
----
+### Hierarchical (Different Resolution)
+Uses parent-mapping (e.g., cell_to_parent):
+12. **Direct Parent, Complete**: Finer unit fully geometrically contained by adjacent coarser resolution.
+13. **Direct Parent, Partial**: Finer unit partially aligned to parent cells with boundary extension.
+14. **Ancestor, Complete**: Full containment at non-adjacent resolution.
+15. **Ancestor, Partial**: Partial containment at non-adjacent resolution.
+16. **Hierarchical Touch**: Overlap limited to the boundary cells of the coarser unit.
+17. **Hierarchical Overlap**: Overlap extending to the interior cells of the coarser unit.
 
-### Proximity Relationship: Neighbour (d = 1)
-Illustrates the "Neighbour" relationship where features share no common H3 cells but are directly adjacent in the grid (minimum grid distance $d=1$).
-![Neighbour Relationship](../images/Whitchurch_Cf52_Nieghbouring2.png)
+
+
+## 3. Technical Reference
+For the full methodology and results, refer to Section 3 of the **[Technical Report](../documentation/H3_Relationships_computation_papers.pdf)**.![Neighbour Relationship](../images/Whitchurch_Cf52_Nieghbouring2.png)
 
 ---
 
