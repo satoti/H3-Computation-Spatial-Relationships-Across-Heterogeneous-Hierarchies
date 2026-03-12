@@ -3,15 +3,13 @@
 This repository contains the methodology, algorithms, and reference metrics for the research paper:  
 **"H3-Based Computation of Qualitative Spatial Relationships Across Heterogeneous Geographic Hierarchies"** *Authors: Abdurauf Satoti and Alia I. Abdelmoty (Cardiff University)*
 
----
-## 🗺️ Overview
-
+--- 
 ## 🗺️ Overview
 Traditional Geographic Information Systems (GIS) often classify spatially separated features as simply `DISJOINT`. This framework leverages Uber's **H3 Discrete Global Grid System (DGGS)** to bridge heterogeneous hierarchies (Administrative, Electoral, and Postal) by:
 
 1. **Adaptive Transformation**: Converting irregular spatial units into standardized hexagonal cell sets based on feature area using a dynamic resolution mapping function T(Ai).
 2. **Qualitative Reasoning**: Identifying **17 distinct relationship types** across Topological, Proximity, and Hierarchical domains.
-3. **Methodological Transparency**: Full technical specifications, mathematical proofs, and pseudocode are provided in the **[Technical Report (2026)](./documentations/H3_Relationships_computation_papers.pdf)**.
+3. **Methodological Transparency**: Full technical specifications, mathematical proofs, and pseudocode are provided in the **[Technical Report (2026)](./documentation/H3_Relationships_computation_papers.pdf)**.
 
 ---
 
