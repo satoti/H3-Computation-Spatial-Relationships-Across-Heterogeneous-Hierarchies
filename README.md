@@ -56,13 +56,14 @@ The framework was evaluated on **3,242 spatial units** across Welsh administrati
 
 If you use this framework or the mapping thresholds in your research, please cite:
 
+
 ```bibtex
 @article{satoti2026h3,
   author  = {Satoti, Abdurauf and Abdelmoty, Alia I.},
   title   = {H3-Based Computation of Qualitative Spatial Relationships
              Across Heterogeneous Geographic Hierarchies},
   journal = {Transactions in GIS},
-  year    = {submitted},
+  year    = {2026},
   note    = {Manuscript submitted for publication}
 }
 ```
