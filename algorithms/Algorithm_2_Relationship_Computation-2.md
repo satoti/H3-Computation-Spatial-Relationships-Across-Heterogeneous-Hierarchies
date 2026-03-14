@@ -229,7 +229,7 @@ The following examples from the Welsh dataset demonstrate the algorithm's output
 
 ![Near Relationship](../images/Cyncoed_f149_close_R_Map.png)
 
-### 5.5 Proximity: Far (d ≥ 5)
+### 5.5 Proximity: Far (d > 4)
 
 **Ely** (community ward) and **CF10 4** (postal sector), both at resolution 9. Minimum H3 grid distance exceeds 4 cells.
 
