@@ -46,7 +46,7 @@ The framework was evaluated on **3,242 spatial units** across Welsh administrati
 
 **Topological** (same resolution): Identical, Complete Containment, Touch, Intersect, Overlap, Disjoint.
 
-**Proximity** (same resolution, no shared cells): Neighbour (d=1), Close (d=2), Near (d=3–4), Far (d≥5), Far Away (d=−1).
+**Proximity** (same resolution, no shared cells): Neighbour (d=1), Close (d=2), Near (d=3–4), Far (d>4), Far Away (d=−1).
 
 **Hierarchical** (different resolutions): Direct Parent Complete/Partial, Ancestor Complete/Partial, Hierarchical Touch, Hierarchical Overlap.
 
